@@ -11,49 +11,56 @@ public class JMCarado {
     }
 
     public static boolean eat(String meal) {
-        System.out.println("You are eating with " + meal + " as a meal.");
+        System.out.println("\nYou are eating with " + meal + " as a meal.");
+        System.out.println("Eating, eating eating. Done eating!");
         return true;
     }
 
     public static boolean shower(String soap, String shampoo) {
-        System.out.println("You are currently in the shower.");
+        System.out.println("\nYou are currently in the shower.");
         System.out.println("You are using " + soap + " as your soap.");
         System.out.println("You are using " + shampoo + " as your shampoo.");
         return true;
     }
 
     public static boolean exercise(int sets) {
-        System.out.println("You are currently exercising.");
+
+        for (int set = 1; set <= sets; set++) {
+            System.out.println("\nYou are currently exercising @ Set " + set + ". ");
+        }
+
         System.out.println("You are now done with " + sets + " sets of exercises.");
         return true;
     }
 
     public static boolean nap(int minutes) {
-        System.out.println("You are about to take a nap.");
+        System.out.println("\nYou are about to take a nap.");
+        System.out.println("Napping, napping, napping");
         System.out.println("You have now woken up after " + minutes + " minutes of napping");
         return true;
     }
 
     public static boolean code(int hours, String language) {
-        System.out.println("You are about to code");
+        System.out.println("\nYou are about to code");
+        System.out.println("Currently coding with " + language + ". ");
         System.out.println("You have now finished coding for " + hours + " hours with " + language + ".");
         return true;
     }
 
     public static boolean game(int hours, String game) {
-        System.out.println("You are about to play a game");
+        System.out.println("\nYou are about to play a game");
         System.out.println("You have now finished gaming for " + hours + " hours with " + game + ".");
         return true;
     }
 
     public static boolean halfbath(int minutes) {
-        System.out.println("You are about to take a half bath.");
+        System.out.println("\nYou are about to take a half bath.");
         System.out.println("You have now finished your half bath for " + minutes + " minutes.");
         return true;
     }
 
     public static boolean brushteeth(String toothpaste) {
-        System.out.println("You are about to brush your teeth");
+        System.out.println("\nYou are about to brush your teeth");
         System.out.println("You have now finished brushing your teeth with " + toothpaste + " as your toothpaste.");
         return true;
     }
