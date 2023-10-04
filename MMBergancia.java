@@ -9,7 +9,7 @@ public class MMBergancia {
 
         //variables
         Scanner sc = new Scanner(System.in); //for inputs
-        int counter = 0; //counts the number of positive feedbacks
+        int positiveFeedbacks = 0; //counts the number of positive feedbacks
 
         //greeting the user
         greetings();
@@ -21,8 +21,8 @@ public class MMBergancia {
         getCoffee();
 
         //Exercise routine
-        //counter increments by 1 if feedback is positive
-        counter = (workoutRoutine(sc) == 'Y') ? ++counter : counter;
+        //positiveFeedbacks increments by 1 if feedback is positive
+        positiveFeedbacks = (workoutRoutine(sc) == 'Y') ? ++positiveFeedbacks : positiveFeedbacks;
 
         //take a shower
         shower();
@@ -30,8 +30,13 @@ public class MMBergancia {
         //entertainment time
         entertainment(sc);
 
+        //have lunch
+        lunch();
+
+        //going outside and enjoying fresh air
+
         sc.close();
-        System.out.println("Counter: " + counter);
+        System.out.println("Counter: " + positiveFeedbacks);
 
     }
 
@@ -116,10 +121,19 @@ public class MMBergancia {
     }
 
     //method for lunch
-    public static void lunch(Scanner sc){
-        sc = new Scanner(System.in);
+    public static void lunch(){
         System.out.println("The next thing to do will be lunch 🥞");
-        System.out.println("");
+        System.out.println("I eat a balanced and healthy meal that will allow me to continue pushing on for the day!");
+    }
+
+    public static void attendClass(){
+        System.out.println("Attending classes is a must!");
+        System.out.println("I try to give my full attention whenever we have a learning session.");
+    }
+
+    public static void goOutside(){
+        System.out.println("Going outside and enjoying some fresh air is one of the activities I look up to every day.");
+        System.out.println("I play with my dogs and get some motivation for continuing my daily tasks and achieving my goals in life.");
 
     }
 
