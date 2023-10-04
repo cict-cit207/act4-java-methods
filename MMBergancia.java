@@ -2,6 +2,7 @@
 //This java program outputs my daily routine
 
 import java.util.Scanner;
+import java.util.random.RandomGenerator;
 
 public class MMBergancia {
 
@@ -9,13 +10,27 @@ public class MMBergancia {
 
         //variables
         Scanner sc = new Scanner(System.in); //for inputs
-        int positiveFeedbacks = 0; //counts the number of positive feedbacks
+        int positiveFeedbacks = 0;  //counts the number of positive feedbacks
+        boolean isWeekday = RandomGenerator.getDefault().nextBoolean();          //true if day is a weekday
+        boolean isAwakeAtFive = RandomGenerator.getDefault().nextBoolean();      //true if is awake at five AM
+        boolean inGoodMood = RandomGenerator.getDefault().nextBoolean();         //true if I'm in a good mood
+
+        System.out.println(isWeekday);
+        System.out.println(isAwakeAtFive);
+        System.out.println(inGoodMood);
 
         //greeting the user
         greetings();
 
         //waking up
         wakeUp();
+
+        if (isAwakeAtFive == true ){
+            if (isWeekday == true){
+
+            }
+        }
+
 
         //getting coffee
         getCoffee();
@@ -40,6 +55,8 @@ public class MMBergancia {
 
     }
 
+
+
     //method for greeting user
     public static void greetings(){
         System.out.println("\nGreetings, User!");
@@ -51,7 +68,7 @@ public class MMBergancia {
     //method for waking up
     public static void wakeUp(){
         System.out.println("The first thing that I do everyday is waking up.");
-        System.out.println("I usually wake up at 5 to 6. I mentally prepare myself for the day until I do my next task\n");
+        System.out.println("I mentally prepare myself for the day until I do my next task\n");
     }
 
     //method for getting coffee
@@ -134,7 +151,6 @@ public class MMBergancia {
     public static void goOutside(){
         System.out.println("Going outside and enjoying some fresh air is one of the activities I look up to every day.");
         System.out.println("I play with my dogs and get some motivation for continuing my daily tasks and achieving my goals in life.");
-
     }
 
 
