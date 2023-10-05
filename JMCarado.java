@@ -150,8 +150,7 @@ public class JMCarado {
         return true;
     }
 
-    public static boolean morning() {
-        Scanner input = new Scanner(System.in);
+    public static boolean morning(Scanner inputInt, Scanner inputStr) {
         String[] MorningtoDo = { "Breakfast", "Shower", "Exercise" };
 
         boolean mtd1 = false;
@@ -165,8 +164,7 @@ public class JMCarado {
             System.out.println("==========================================");
             System.out.print("\n == Choice: ");
 
-            int choice = input.nextInt();
-            input.nextLine(); // Consume the newline character
+            int choice = inputInt.nextInt();
 
             if (choice == 0) {
                 return false;
@@ -179,7 +177,7 @@ public class JMCarado {
                         continue;
                     }
                     System.out.print(" == Input your meal choice: ");
-                    String meal = input.nextLine();
+                    String meal = inputStr.nextLine();
                     mtd1 = eat(meal);
                     break;
 
@@ -189,10 +187,10 @@ public class JMCarado {
                         continue;
                     }
                     System.out.print(" == Input your soap choice: ");
-                    String soap = input.nextLine();
+                    String soap = inputStr.nextLine();
 
                     System.out.print(" == Input your shampoo choice: ");
-                    String shampoo = input.nextLine();
+                    String shampoo = inputStr.nextLine();
                     mtd2 = shower(soap, shampoo);
                     break;
 
@@ -202,8 +200,7 @@ public class JMCarado {
                         continue;
                     }
                     System.out.print(" == Input number of sets: ");
-                    int sets = input.nextInt();
-                    input.nextLine(); // Consume the newline character
+                    int sets = inputInt.nextInt();
                     mtd3 = exercise(sets);
                     break;
 
@@ -214,11 +211,11 @@ public class JMCarado {
             }
 
         }
+
         return true;
     }
 
-    public static boolean afternoon() {
-        Scanner input = new Scanner(System.in);
+    public static boolean afternoon(Scanner inputInt, Scanner inputStr) {
         String[] todo = { "Eat Lunch", "Take a nap", "Code", "Play Games" };
 
         boolean mtd1 = false;
@@ -232,8 +229,7 @@ public class JMCarado {
             System.out.println("Input 0 to skip afternoon routine");
             System.out.println("==========================================");
             System.out.print("\n == Choice: ");
-            int choice = input.nextInt();
-            input.nextLine(); // Consume the newline character
+            int choice = inputInt.nextInt();
 
             if (choice == 0) {
                 return false;
@@ -246,7 +242,7 @@ public class JMCarado {
                         continue;
                     }
                     System.out.print(" == Input your meal choice: ");
-                    String meal = input.nextLine();
+                    String meal = inputStr.nextLine();
                     mtd1 = eat(meal);
                     break;
 
@@ -256,7 +252,7 @@ public class JMCarado {
                         continue;
                     }
                     System.out.print(" == Input your nap duration: ");
-                    int minutes = input.nextInt();
+                    int minutes = inputInt.nextInt();
                     mtd2 = nap(minutes);
                     break;
 
@@ -266,10 +262,9 @@ public class JMCarado {
                         continue;
                     }
                     System.out.print(" == Input number of hours: ");
-                    int hours = input.nextInt();
-                    input.nextLine();
+                    int hours = inputInt.nextInt();
                     System.out.print(" == Input language: ");
-                    String language = input.nextLine();
+                    String language = inputStr.nextLine();
                     mtd3 = code(hours, language);
                     break;
 
@@ -279,13 +274,10 @@ public class JMCarado {
                         continue;
                     }
                     System.out.print(" == Input number of hours: ");
-                    int hours_g = input.nextInt();
-
-                    // Consume the newline character
-                    input.nextLine();
+                    int hours_g = inputInt.nextInt();
 
                     System.out.print(" == Input game of choice: ");
-                    String game = input.nextLine();
+                    String game = inputStr.nextLine();
                     mtd4 = game(hours_g, game);
                     break;
 
@@ -299,8 +291,7 @@ public class JMCarado {
 
     }
 
-    public static boolean evening() {
-        Scanner input = new Scanner(System.in);
+    public static boolean evening(Scanner inputInt, Scanner inputStr) {
         String[] todo = { "Dinner", "Half Bath", "Brush Teeth" };
 
         boolean mtd1 = false;
@@ -313,8 +304,7 @@ public class JMCarado {
             System.out.println("Input 0 to skip evening routine");
             System.out.println("==========================================");
             System.out.print("\nChoice: ");
-            int choice = input.nextInt();
-            input.nextLine(); // Consume the newline character
+            int choice = inputInt.nextInt();
 
             if (choice == 0) {
                 return false;
@@ -327,7 +317,7 @@ public class JMCarado {
                         continue;
                     }
                     System.out.print(" == Input your meal choice: ");
-                    String meal = input.nextLine();
+                    String meal = inputStr.nextLine();
                     mtd1 = eat(meal);
                     break;
 
@@ -337,7 +327,7 @@ public class JMCarado {
                         continue;
                     }
                     System.out.print(" == Input your half bath duration: ");
-                    int minutes = input.nextInt();
+                    int minutes = inputInt.nextInt();
                     mtd2 = halfbath(minutes);
                     break;
 
@@ -347,7 +337,7 @@ public class JMCarado {
                         continue;
                     }
                     System.out.print(" == Input choice of toothpaste: ");
-                    String toothpaste = input.nextLine();
+                    String toothpaste = inputStr.nextLine();
                     mtd3 = brushteeth(toothpaste);
                     break;
 
@@ -363,19 +353,25 @@ public class JMCarado {
 
     public static void main(String[] args) {
         System.out.println("Today is Saturday! Ready?");
-        boolean morn = morning();
+        Scanner inputInt = new Scanner(System.in);
+        Scanner inputStr = new Scanner(System.in);
+
+        boolean morn = morning(inputInt, inputStr);
 
         if (morn) {
             System.out.println("\n == YOU HAVE NOW PASSED THE MORNING ROUTINE, CONTINUING TO AFTERNOON ROUTINES ==");
         }
 
-        boolean af = afternoon();
+        boolean af = afternoon(inputInt, inputStr);
         if (af) {
             System.out.println("\n == YOU HAVE NOW PASSED THE AFTERNOON ROUTINE, CONTINUING TO EVENING ROUTINES == ");
         }
 
-        evening();
-        System.out.println(" == You have now finished your Saturday! Hope you had a great day!");
+        evening(inputInt, inputStr);
+        System.out.println("\n == You have now finished your Saturday! Hope you had a great day!");
+        inputInt.close();
+        inputStr.close();
+
     }
 
 }
