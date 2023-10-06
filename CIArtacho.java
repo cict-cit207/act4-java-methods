@@ -198,51 +198,47 @@ class CIArtacho {
         day = n.nextLine();
         n.close();
             switch(day){
-            case "Monday":
+            case "Monday" :
                 System.out.println("You Chose Monday.");
                 Morning_Exercises(1);
                 Afternoon_Activities(1);
                 Nighttime_Activities(1);
             break;
             case "Tuesday":
-                System.out.println("Tuesday");
+                System.out.println("You Chose Tuesday.");
                 Morning_Exercises(2);
                 Afternoon_Activities(2);
                 Nighttime_Activities(2);
             break;
             case "Wednesday":
-                 System.out.println("Wednesday");
+                 System.out.println("You Chose Wednesday.");
                 Morning_Exercises(3);
                 Afternoon_Activities(3);
                 Nighttime_Activities(3);
             break;
             case "Thursday":
-                System.out.println("Thursday");
+                System.out.println("You Chose Thursday.");
                 Morning_Exercises(4);
                 Afternoon_Activities(4);
                 Nighttime_Activities(4);
             break;
             case "Friday":
-                 System.out.println("Friday");
+                 System.out.println("You Chose Friday.");
                 Morning_Exercises(5);
                 Afternoon_Activities(5);
                 Nighttime_Activities(5);
             break;
             case "Saturday":
-                System.out.println("Saturday");
+                System.out.println("You Chose Saturday.");
                 Morning_Exercises(6);
                 Afternoon_Activities(6);
                 Nighttime_Activities(6);
             break;
             case "Sunday":
-                System.out.println("Sunday");
+                System.out.println("You Chose Sunday.");
                 Morning_Exercises(7);
                 Afternoon_Activities(7);
                 Nighttime_Activities(7);
-            case "Exit":
-                System.out.print("Exiting System. Thank You.");
-
-            break;
             default: System.out.print("Wrong Choice. Please Restart the System");
             }
     }       
