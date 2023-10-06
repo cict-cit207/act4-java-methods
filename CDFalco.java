@@ -317,10 +317,12 @@ public class CDFalco {
         }
     }
 
+    // Time input
     private static String getTimeInput() {
         return getStringInput("Enter the time (e.g., 10:30 AM): ");
     }
 
+    // If invalid
     private static int getIntInput(String prompt) {
         Scanner scanner = new Scanner(System.in);
         System.out.print(prompt);
@@ -332,12 +334,14 @@ public class CDFalco {
         return scanner.nextInt();
     }
 
+    // Other input
     private static String getStringInput(String prompt) {
         Scanner scanner = new Scanner(System.in);
         System.out.print(prompt);
         return scanner.nextLine();
     }
 
+    // Details in History
     private static void recordActivity(String category, String details, String time) {
         String activity = category + ": " + details + " at " + time;
         activityHistory.add(activity);
