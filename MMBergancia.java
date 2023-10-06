@@ -8,16 +8,13 @@ public class MMBergancia {
 
     public static void main(String[] args) {
 
-        //variables
+        //boolean variables are set to random for variety
         Scanner sc = new Scanner(System.in); //for inputs
-        int positiveFeedbacks = 0;  //counts the number of positive feedbacks
+        int positiveFeedbacks = 0;  //counts the number of positive feedbacks from the user
         boolean isWeekday = RandomGenerator.getDefault().nextBoolean();          //true if day is a weekday
         boolean isAwakeAtFive = RandomGenerator.getDefault().nextBoolean();      //true if is awake at five AM
         boolean inGoodMood = RandomGenerator.getDefault().nextBoolean();         //true if I'm in a good mood
-
-        System.out.println(isWeekday);
-        System.out.println(isAwakeAtFive);
-        System.out.println(inGoodMood);
+        boolean isOnlineClass = RandomGenerator.getDefault().nextBoolean();      //true if class is held online
 
         //greeting the user
         greetings();
@@ -25,37 +22,46 @@ public class MMBergancia {
         //waking up
         wakeUp();
 
-        if (isAwakeAtFive == true ){
-            if (isWeekday == true){
-
-            }
-        }
-
-
         //getting coffee
         getCoffee();
 
-        //Exercise routine
-        //positiveFeedbacks increments by 1 if feedback is positive
-        positiveFeedbacks = (workoutRoutine(sc) == 'Y') ? ++positiveFeedbacks : positiveFeedbacks;
+        //if awake at five AM in the morning, do workout session
+        if (isAwakeAtFive == true) {
+                //Exercise routine
+                //positiveFeedbacks increments by 1 if feedback is positive
+                positiveFeedbacks = (workoutRoutine(sc) == 'Y') ? ++positiveFeedbacks : positiveFeedbacks;
+                inGoodMood = true; // inGoodMood == true
+        }
 
         //take a shower
         shower();
 
-        //entertainment time
-        entertainment(sc);
+        //eat breakfast
+        breakfast();
+
+        //check if today is a weekday
+        if (isWeekday == true){
+            //attend the class
+            attendClass(isOnlineClass);
+        }
+
+        else {
+            //entertainment time
+            entertainment(sc);
+        }
 
         //have lunch
         lunch();
 
         //going outside and enjoying fresh air
+        goOutside();
+
+        //
 
         sc.close();
         System.out.println("Counter: " + positiveFeedbacks);
 
     }
-
-
 
     //method for greeting user
     public static void greetings(){
@@ -81,6 +87,7 @@ public class MMBergancia {
     public static char workoutRoutine(Scanner sc){
         System.out.println("Afterwards, I start my workout routine");
         System.out.println("Exercise is good for the mind and body!\nHere is my routine:");
+
         System.out.println("Time            Duration                    Activity");
         System.out.println("7:00 AM:        15 minutes                  Stretching");
         System.out.println("7:15 AM:        1 hr and 30 minutes         Jogging");
@@ -105,23 +112,24 @@ public class MMBergancia {
                 System.out.print("Try again: ");
                 answer = sc.next().charAt(0);
             }
-        }while (answer != 'Y' || answer != 'n');
+        } while (answer != 'Y' || answer != 'n');
 
         return answer;
     }
 
-    //method for shower
+    //method for taking a shower
     public static void shower(){
         System.out.println("After my work-out session and having rested, I prepare myself for shower");
         System.out.println("I start scrubbing and do my best to clean each body part 😎");
         System.out.println("When I'm done showering, I prepare myself for the next activity.\n");
     }
 
+    //method for having breakfast
     public static void breakfast(){
         System.out.println("Breakfast is said to be the most important meal of the day, but I think that every meal is as important as the other.");
         System.out.println("Nonetheless, I usually start breakfast after shower.");
         System.out.println("I eat a balanced breakfast and drink plenty of water!");
-        System.out.println("I then proceed to do the next activity");
+        System.out.println("I then proceed to do the next activity\n");
     }
 
     //method for entertainment
@@ -129,25 +137,35 @@ public class MMBergancia {
         sc = new Scanner(System.in);
         System.out.println("Entertainment is next on my list of activities!");
         System.out.println("During this time, I watch movies, play games, or do some other fun activities! 🎮🎬🍿");
-        System.out.println("I do this for a few hours. Sometimes, I lose track of time and overdo this activity 😅");
+        System.out.println("I do this for a few hours. Sometimes, I lose track of time and overdo this activity \n");
 
         System.out.println("What movies/games will you recommend me?");
         String recommendation = sc.nextLine();
         System.out.println(recommendation);
-        System.out.println("Great choice! I will look that up!");
+        System.out.println("Great choice! I will look that up!\n");
     }
 
-    //method for lunch
+    //method for having lunch
     public static void lunch(){
-        System.out.println("The next thing to do will be lunch 🥞");
+        System.out.println("The next thing to do will be lunch.");
         System.out.println("I eat a balanced and healthy meal that will allow me to continue pushing on for the day!");
+
     }
 
-    public static void attendClass(){
+    //method for attending class
+    public static void attendClass(boolean isOnlineClass){
         System.out.println("Attending classes is a must!");
         System.out.println("I try to give my full attention whenever we have a learning session.");
+        if (isOnlineClass == true){
+            System.out.println("I prepare my phone and laptop and wait for the lecture to begin.");
+        }
+        else{
+            System.out.println("Me and my classmates prepare for class in the classroom.");
+        }
+        System.out.println("After class, I proceed to the next activiy!");
     }
 
+    //method for going outside
     public static void goOutside(){
         System.out.println("Going outside and enjoying some fresh air is one of the activities I look up to every day.");
         System.out.println("I play with my dogs and get some motivation for continuing my daily tasks and achieving my goals in life.");
