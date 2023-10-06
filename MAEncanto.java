@@ -31,8 +31,7 @@ public class MAEncanto {
         System.out.println("\t5. Play Games");
         System.out.println("\t6. Do a Household Chore");
         System.out.println("\t7. Make Gala");
-        System.out.println("\t8. Day Activity Summary");
-        System.out.println("\t9. Good Night's Sleep");
+        System.out.println("\t8. Good Night's Sleep");
         System.out.println("________________________________________________________________________");
         System.out.print("Choice: ");
         int choice = input.nextInt(); // Read the user's choice
@@ -74,9 +73,6 @@ public class MAEncanto {
             case 7: //ROAMING AROUND
                 roamingAround(input); // function calls and executes roaming around
                 break;
-            case 8:// SUMMARY OF ACTIVITIES
-                activitySummary(choice, choice, choice, choice, choice, choice, choice, choice);
-                break;
             default:
                 System.out.println("GOOD NIGHT! SEE YOU TOMORROW!");
                 System.exit(0); // exit
@@ -86,11 +82,10 @@ public class MAEncanto {
     // TAKING A BATH FUNCTION
     public static void takingBath(Scanner input){
         System.out.print("How much time will it take you to take a bath? [In minutes] "); // prompts user to input bathDuration
-        int bathDuration = 0; // initialized to zero incase not chosen by the user for the computation of total time spent.
-        bathDuration= input.nextInt(); // input bath duration
-        System.out.print("What shampoo will your use? [Sunsilk, Palmolive] "); // [prompts user to input bath details]
+        int bathDuration = input.nextInt(); // input bath duration
+        System.out.print("What shampoo will your use? [Sunsilk, Palmolive] [NO SPACE] "); // [prompts user to input bath details]
         String bathShampoo = input.next(); // shampoo input
-        System.out.print("What soap will you use? [Johnson's, Olay, Dove] "); // [prompts user to input bath details]
+        System.out.print("What soap will you use? [Johnson's, Olay, Dove] [NO SPACE] "); // [prompts user to input bath details]
         String bathSoap = input.next(); // soap input
 
         System.out.println("--------------------------------------");
@@ -105,11 +100,10 @@ public class MAEncanto {
     //EATING MEAL FUNCTION
     public static void eatMeal(Scanner input){
         System.out.print("How much will it take you to eat? [In Minutes] "); // prompts user to input eatingDuration
-        int eatingDuration = 0; // initialized to zero incase not chosen by the user for the computation of total time spent.
-        eatingDuration = input.nextInt(); // input eating duration
-        System.out.print("What will main course will you eat? "); // [prompts user to input main course]
+        int eatingDuration = input.nextInt(); // input eating duration
+        System.out.print("What will main course will you eat? [NO SPACE] "); // [prompts user to input main course]
         String eatingMainCourse = input.next(); // main course input
-        System.out.print("What will be the dessert?"); // [prompts user to input dessert]
+        System.out.print("What will be the dessert? [NO SPACE] "); // [prompts user to input dessert]
         String eatingDessert = input.next(); // dessert input
 
         System.out.println("--------------------------------------");
@@ -123,9 +117,9 @@ public class MAEncanto {
 
     // FEEDING PETS FUNCTION
     public static void feedPets(Scanner input){
-        System.out.print("What pet to feed? [Select One (1)] "); // [prompts user to input pet Type]
+        System.out.print("What pet to feed? [Select One (1)] [NO SPACE] "); // [prompts user to input pet Type]
         String petType = input.next(); // main course input
-        System.out.print("How much will it take you to feed your pet? [In Minutes] "); // prompts user to input feedingDuration
+        System.out.print("How much will it take you to feed your pet? [In Minutes]  "); // prompts user to input feedingDuration
         int feedingDuration = 0; // initialized to zero incase not chosen by the user for the computation of total time spent.
         feedingDuration = input.nextInt(); // input feeding duration
 
@@ -142,8 +136,7 @@ public class MAEncanto {
         System.out.print("How many tasks do you have to finish "); // [prompts user to input number of tasks left]
         String tasksNum = input.next(); // input number of tasks left
         System.out.print("How much will it take you to finsih all of the tasks? [In Minutes] "); // prompts user to input finishingTasksDuration
-        int finishingTasksDuration = 0; // initialized to zero incase not chosen by the user for the computation of total time spent.
-        finishingTasksDuration = input.nextInt(); // input finishing duration
+        int finishingTasksDuration = input.nextInt(); // input finishing duration
 
         System.out.println("--------------------------------------");
         System.out.println("\tFINISHING TASKS SUMMARY"); // title to print information acquired
@@ -156,11 +149,10 @@ public class MAEncanto {
     
     // PLAYING GAMES FUNCTION
     public static void playingGames(Scanner input){
-        System.out.print("What game to play? [Select one (1)] "); // [prompts user to input game to play]
+        System.out.print("What game to play? [Select one (1)] [NO SPACE] "); // [prompts user to input game to play]
         String gamePlayed = input.next(); // input the game of choice
         System.out.print("How long will you play? [In Minutes] "); // prompts user to input gameDuration
-        int gameDuration = 0; // initialized to zero incase not chosen by the user for the computation of total time spent.
-        gameDuration = input.nextInt(); // input gameDuration
+        int gameDuration = input.nextInt(); // input gameDuration
 
         System.out.println("--------------------------------------");
         System.out.println("\tPLAYING SUMMARY"); // title to print information acquired
@@ -173,11 +165,10 @@ public class MAEncanto {
 
     //DOING HOUSEHOLD CHORES FUNCTION
     public static void doingChores(Scanner input){
-        System.out.print("Choose a chore: [Wash Dishes, Sweep Floors, Wipe Windows] "); // [prompts user to input chore to do]
+        System.out.print("Choose a chore: [Wash Dishes, Sweep Floors, Wipe Windows] [NO SPACE] "); // [prompts user to input chore to do]
         String choreChosen = input.next(); // input the chore of choice
         System.out.print("How long will it take to finish the chore? [In Minutes] "); // prompts user to input choreDuration
-        int choreDuration = 0; // initialized to zero incase not chosen by the user for the computation of total time spent.
-        choreDuration = input.nextInt(); // input choreDuration
+        int choreDuration = input.nextInt(); // input choreDuration
 
         System.out.println("--------------------------------------");
         System.out.println("\tCLEANING SUMMARY"); // title to print information acquired
@@ -190,11 +181,10 @@ public class MAEncanto {
 
     // ROAMING AROUND THE PLACE FUNCTION
     public static void roamingAround(Scanner input){
-        System.out.print("Choose a desitination: "); // [prompts user to input destination]
+        System.out.print("Choose a desitination: [NO SPACE] "); // [prompts user to input destination]
         String destinationChosen = input.next(); // input the destination of choice
         System.out.print("How much time will you spend on roaming? [In Minutes] "); // prompts user to input roamingDuration
-        int roamingDuration = 0; // initialized to zero incase not chosen by the user for the computation of total time spent.
-        roamingDuration = input.nextInt(); // input roamingDuration
+        int roamingDuration = input.nextInt(); // input roamingDuration
 
         System.out.println("--------------------------------------");
         System.out.println("\tPLAYING SUMMARY"); // title to print information acquired
@@ -202,18 +192,5 @@ public class MAEncanto {
         System.out.println("Destination: " + destinationChosen);
         System.out.println("Roaming Duration: " + roamingDuration + "minutes");
 
-    }
-
-
-    
-    // ACTIVITY SUMMARY FUNCTION
-    public static void activitySummary (int time, int bathDuration, int eatingDuration, int feedingDuration, int choreDuration, int gameDuration, int roamingDuration, int finishingTasksDuration)
-    {
-        System.out.println("--------------------------------------");
-        System.out.println("\tTOTAL SUMMARY"); // title to print information acquired
-        System.out.println("--------------------------------------");
-        System.out.println("Woke up at" + time);
-        int totalDuration = bathDuration + eatingDuration + feedingDuration + choreDuration + gameDuration + roamingDuration + finishingTasksDuration;
-        System.out.println("Total Time Spent on Activities Today: " + totalDuration + " minutes.");
     }
 }
