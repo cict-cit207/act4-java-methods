@@ -279,7 +279,7 @@ public class MMBergancia {
         switch (positiveFeedbacks){
             case 0:
                 System.out.println("Thank you for being honest! It takes great courage to voice out friendly criticism!");
-                pressAnyKeyToContinue(sc);
+                pressAnyKeyToContinue();
                 break;
             case 1:
                 System.out.println("We may not get along that well, but I'm glad we have something in common!");
