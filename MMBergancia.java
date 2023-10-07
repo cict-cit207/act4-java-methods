@@ -15,13 +15,13 @@ public class MMBergancia {
 
         boolean isOnlineClass = (isWeekday == true) ? RandomGenerator.getDefault().nextBoolean() : false;    //true if class is held online, automatically false if isWeekday ==false
 
-        greetings(sc);
+        greetings();
 
-        instructions(isWeekday, isAwakeAtFive, inGoodMood, isOnlineClass, sc);
+        instructions(isWeekday, isAwakeAtFive, inGoodMood, isOnlineClass);
 
-        wakeUp(sc);
+        wakeUp();
 
-        getCoffee(sc);
+        getCoffee();
 
         //if awake at five AM in the morning, do workout routine
         if (isAwakeAtFive == true) {
@@ -36,14 +36,14 @@ public class MMBergancia {
             inGoodMood = false;
         }
 
-        shower(sc);
+        shower();
 
         //variable positiveFeedbacks increments when user likes breakfast routine
         positiveFeedbacks = (breakfast(sc) == 'Y') ? ++positiveFeedbacks : positiveFeedbacks;
 
         //if today is a weekday, attend class
         if (isWeekday == true){
-            attendClass(isOnlineClass, sc);
+            attendClass(isOnlineClass);
         }
         //otherwise, get entertainment
         else {
@@ -53,32 +53,32 @@ public class MMBergancia {
         //variable positiveFeedbacks increments when user likes lunch routine
         positiveFeedbacks =  (lunch(sc) == 'Y') ? ++positiveFeedbacks : positiveFeedbacks;
 
-        goOutside(sc);
+        goOutside();
 
-        goHome(sc);
+        goHome();
 
         //variable positiveFeedbacks increments when user likes dinner routine
         positiveFeedbacks = (dinner(sc) == 'Y') ? ++positiveFeedbacks : positiveFeedbacks;
 
-        inGoodMood = midnightThoughts(sc);
+        inGoodMood = midnightThoughts();
 
         //counting positive feedbacks
-        getStats(positiveFeedbacks, sc);
+        getStats(positiveFeedbacks);
 
         sc.close();
 
     }
 
     //method for greeting user
-    public static void greetings(Scanner sc){
+    public static void greetings(){
         System.out.println("\nGreetings, User!");
         System.out.println("My name is Mauricio Manuel F. Bergancia");
         System.out.println("I am a 2nd year computer science major at West Visayas State University (WVSU)\n");
-        pressAnyKeyToContinue(sc);
+        pressAnyKeyToContinue();
     }
 
     //method for instructions
-    public static void instructions(boolean isWeekday, boolean isAwakeAtFive, boolean inGoodMood, boolean isOnlineClass, Scanner sc){
+    public static void instructions(boolean isWeekday, boolean isAwakeAtFive, boolean inGoodMood, boolean isOnlineClass){
         System.out.println("This program shows my daily routine.\nMy daily routine is diverse, but this program does its best to show what I do on a daily basis.");
         System.out.println("My daily decisions are made by several factors. My mood, waking up early, classes on " +
                 "weekdays, and the modality of class can affect my choices.\n");
@@ -94,21 +94,21 @@ public class MMBergancia {
         System.out.println("Online class: " + isOnlineClass);
         System.out.println("=====================================\n");
 
-        pressAnyKeyToContinue(sc);
+        pressAnyKeyToContinue();
     }
 
     //method for waking up
-    public static void wakeUp(Scanner sc){
+    public static void wakeUp(){
         System.out.println("The first thing that I do everyday is waking up.");
         System.out.println("I mentally prepare myself for the day until I do my next task\n");
-        pressAnyKeyToContinue(sc);
+        pressAnyKeyToContinue();
     }
 
     //method for getting coffee
-    public static void getCoffee(Scanner sc){
+    public static void getCoffee(){
         System.out.println("I start my day with a cup of coffee ☕");
         System.out.println("My favorite is pure black coffee 🖤\n");
-        pressAnyKeyToContinue(sc);
+        pressAnyKeyToContinue();
     }
 
     //method for showing my workout routine
@@ -135,12 +135,12 @@ public class MMBergancia {
         do {
             if (answer == 'Y'){
                 System.out.println("Thank you for the positive feedback 💕\n");
-                pressAnyKeyToContinue(sc);
+                pressAnyKeyToContinue();
                 break;
             }
             else if (answer == 'n'){
                 System.out.println("Thanks for your honesty 🤍\n");
-                pressAnyKeyToContinue(sc);
+                pressAnyKeyToContinue();
                 break;
             }
             else if (attempts == 2){
@@ -157,11 +157,11 @@ public class MMBergancia {
     }
 
     //method for taking a shower
-    public static void shower(Scanner sc){
+    public static void shower(){
         System.out.println("I move onto the next activity and prepare myself for shower");
         System.out.println("I start scrubbing and do my best to clean each body part 😎");
         System.out.println("When I'm done showering, I prepare myself for the next activity.\n");
-        pressAnyKeyToContinue(sc);
+        pressAnyKeyToContinue();
     }
 
     //method for having breakfast
@@ -193,7 +193,7 @@ public class MMBergancia {
         System.out.println("What movies/games will you recommend me?");
         String recommendation = sc.nextLine();
         System.out.println("Great choice! I will look that up!\n");
-        pressAnyKeyToContinue(sc);
+        pressAnyKeyToContinue();
     }
 
     //method for having lunch
@@ -215,7 +215,7 @@ public class MMBergancia {
     }
 
     //method for attending class
-    public static void attendClass(boolean isOnlineClass, Scanner sc){
+    public static void attendClass(boolean isOnlineClass){
         System.out.println("Attending classes is a must!");
         System.out.println("I try to give my full attention whenever we have a learning session.");
         if (isOnlineClass == true){
@@ -225,21 +225,21 @@ public class MMBergancia {
             System.out.println("My classmates and I prepare for class in the classroom.");
         }
         System.out.println("After class, I proceed to the next activiy!\n");
-        pressAnyKeyToContinue(sc);
+        pressAnyKeyToContinue();
     }
 
     //method for going outside
-    public static void goOutside(Scanner sc){
+    public static void goOutside(){
         System.out.println("Going outside in the afternoon and enjoying some fresh air is one of the activities I look up to every day.");
         System.out.println("I play with my dogs, watch the greenery, and get some motivation for continuing my daily tasks and achieving my goals in life.\n");
-        pressAnyKeyToContinue(sc);
+        pressAnyKeyToContinue();
     }
 
     //method for going Home
-    public static void goHome(Scanner sc){
+    public static void goHome(){
         System.out.println("After doing all the tiring tasks all day, I finally go back to my home or my boarding house.");
         System.out.println("I rest for a while in my bed and prepare for the final sets of activities to be done.\n");
-        pressAnyKeyToContinue(sc);
+        pressAnyKeyToContinue();
     }
 
     //method for having dinner
@@ -261,18 +261,18 @@ public class MMBergancia {
     }
 
     //method for midnight thinking
-    public static boolean midnightThoughts(Scanner sc){
+    public static boolean midnightThoughts(){
         System.out.println("After doing all the tasks, I reflect on the events that happened on the day.");
         System.out.println("These thoughts of mine vary, and their effect to my overall mood is very influential.");
         System.out.println("There are times that I become very sad because of them, but I also become very happy and uplifted when I think of the beautiful and fun moments.");
         System.out.println("Because of that, I think of this task as an action that has a very unpredictable aftereffect to my everyday life.\n");
-        pressAnyKeyToContinue(sc);
+        pressAnyKeyToContinue();
         //since this method is unpredictable, returning a random boolean is reasonable mwehehe
         return RandomGenerator.getDefault().nextBoolean();
     }
 
     //method for stats of user
-    public static void getStats(int positiveFeedbacks, Scanner sc){
+    public static void getStats(int positiveFeedbacks){
         System.out.println("==============================================");
         System.out.println("Total no. of positive feedbacks: " + positiveFeedbacks);
         System.out.println("Statistics: " + ((float) positiveFeedbacks / 3)*100 + "%");
@@ -283,24 +283,25 @@ public class MMBergancia {
                 break;
             case 1:
                 System.out.println("We may not get along that well, but I'm glad we have something in common!");
-                pressAnyKeyToContinue(sc);
+                pressAnyKeyToContinue();
                 break;
             case 2:
                 System.out.println("We should be friends ❤️");
-                pressAnyKeyToContinue(sc);
+                pressAnyKeyToContinue();
                 break;
             case 3:
                 System.out.println("Slay po labyu po baby baby you're my sun and moon 💓💓💓");
-                pressAnyKeyToContinue(sc);
+                pressAnyKeyToContinue();
                 break;
+            case 4:
+                System.out.println("We are besties forever!");
             default:
                 throw new ArithmeticException("Invalid amount!");
         }
     }
 
     //method for pausing
-    public static void pressAnyKeyToContinue(Scanner sc)
-    {
+    public static void pressAnyKeyToContinue(){
         System.out.println("Press any key to continue...");
         try
         {
