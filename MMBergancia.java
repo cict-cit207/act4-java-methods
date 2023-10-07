@@ -286,7 +286,7 @@ public class MMBergancia {
                 pressAnyKeyToContinue(sc);
                 break;
             case 3:
-                System.out.println("Slay po labyu po baby baby your my sun and moon 💓💓💓");
+                System.out.println("Slay po labyu po baby baby you're my sun and moon 💓💓💓");
                 pressAnyKeyToContinue(sc);
                 break;
             default:
