@@ -62,10 +62,10 @@ public class MMBergancia {
 
         inGoodMood = midnightThoughts(sc);
 
+        //counting positive feedbacks
         getStats(positiveFeedbacks, sc);
 
         sc.close();
-        //counting positive feedbacks
 
     }
 
