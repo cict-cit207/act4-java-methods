@@ -235,12 +235,14 @@ public class MMBergancia {
         pressAnyKeyToContinue(sc);
     }
 
+    //method for going Home
     public static void goHome(Scanner sc){
         System.out.println("After doing all the tiring tasks all day, I finally go back to my home or my boarding house.");
         System.out.println("I rest for a while in my bed and prepare for the final sets of activities to be done.\n");
         pressAnyKeyToContinue(sc);
     }
 
+    //method for having dinner
     public static char dinner(Scanner sc){
         System.out.println("The next course of action would be dinner!");
         System.out.println("I take light meals for easy digesting");
@@ -258,6 +260,7 @@ public class MMBergancia {
         return getFeedback(sc);
     }
 
+    //method for midnight thinking
     public static boolean midnightThoughts(Scanner sc){
         System.out.println("After doing all the tasks, I reflect on the events that happened on the day.");
         System.out.println("These thoughts of mine vary, and their effect to my overall mood is very influential.");
@@ -268,6 +271,7 @@ public class MMBergancia {
         return RandomGenerator.getDefault().nextBoolean();
     }
 
+    //method for stats of user
     public static void getStats(int positiveFeedbacks, Scanner sc){
         System.out.println("==============================================");
         System.out.println("Total no. of positive feedbacks: " + positiveFeedbacks);
