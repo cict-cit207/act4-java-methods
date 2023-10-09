@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class GumacalDailyRoutine {
+public class RJGumacal {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in); //Uses scanner for inputs
