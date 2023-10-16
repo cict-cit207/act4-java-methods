@@ -47,11 +47,11 @@ public class KJGalvez{
                 System.exit(1);
             }
 
-            System.out.print("\nAny Key to ReRun while Enter N if your not handsome : ");
+            System.out.print("\nAny Key to ReRun while Enter N if youre not handsome : ");
             cheese = input.next().charAt(0);
         }
 
-        System.out.println("\n\t\t\t\t      --------Your Handsomer--------\n");
+        System.out.println("\n\t\t\t\t      --------Youre Handsomer--------\n");
     }
 
     public static void format(){
